@@ -18,6 +18,10 @@ public class HomePage {
 	@FindBy (xpath = "//div[text()='Flights']")
 	public WebElement Flights;
 	
+	@FindBy (xpath = "//div[text()='Welcome aboard.']")
+	public WebElement welcomeAbroad;
+	
+	
 	@FindBy (xpath = "//div[@data-testid='one-way-radio-button']")
 	public WebElement Oneway;
 	
@@ -26,6 +30,9 @@ public class HomePage {
 	
 	@FindBy (xpath = "//div[text()='From']")
 	public WebElement FromDestination;
+	
+	@FindBy (xpath = "//div[text()='Agra']")
+	public WebElement Agra;
 	
 	@FindBy (xpath = "//div[text()='To']")
 	public WebElement ToDestination;

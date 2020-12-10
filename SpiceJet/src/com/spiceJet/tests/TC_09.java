@@ -1,5 +1,7 @@
 package com.spiceJet.tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -22,6 +24,15 @@ public class TC_09 {
 		
 		
 		HomeSteps.passenger();
+		WebElement text = WebDriverSession.getWebDriverSession().findElement(By.xpath("//div[text()='Adult']"));
+		String textValue = text.getText();
+		System.out.println(textValue);
+		if (text.isDisplayed()) {
+			System.out.println("Text is displayed");
+		}else {
+			System.out.println("Text is not displayed");
+
+		}
 		
 	}
 	

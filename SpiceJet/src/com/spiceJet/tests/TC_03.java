@@ -1,5 +1,7 @@
 package com.spiceJet.tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -21,8 +23,15 @@ public class TC_03 {
 	public void OneWay() {
 		
 		HomeSteps.oneWay();
-		
-		
+		WebElement radioSelected= WebDriverSession.getWebDriverSession().findElement(By.xpath("//div[@data-testid='one-way-radio-button']"));
+	     if (radioSelected.isSelected())
+	    {
+	      System.out.println("Radio Button is selected");
+	    }else{
+	    	radioSelected.click();
+	    	System.out.println("select");
+}
+				
 	}
 	
 	@AfterTest

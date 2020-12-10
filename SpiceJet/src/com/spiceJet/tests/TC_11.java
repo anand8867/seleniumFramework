@@ -1,5 +1,6 @@
 package com.spiceJet.tests;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -21,6 +22,13 @@ public class TC_11 {
 	public void clickOnSeniorCitizen(){
 				
 		HomeSteps.seniorCitizen();
+		Boolean radioSelected= WebDriverSession.getWebDriverSession().findElement(By.xpath("//div[text()='Senior Citizen']")).isSelected();
+	     if (radioSelected)
+	    {
+	      System.out.println("Radio Button is selected");
+	    }else{
+	      System.out.println("Radio Button is not selected");
+	    }
 		
 	}
 	

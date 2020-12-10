@@ -10,7 +10,8 @@ public class HomeSteps extends BaseStep {
 	public static void clickOnFlightTab() {
 		
 		BaseStep.Clicks.clickElement(homePage.Flights);
-		
+//		String Text = homePage.welcomeAbroad.getText();
+//		System.out.println(Text + " : text");
 		
 	}
 	public static void oneWay() {
@@ -27,6 +28,7 @@ public class HomeSteps extends BaseStep {
 	public static void clickOnFrom() {
 		
 		BaseStep.Clicks.clickElement(homePage.FromDestination);
+		//BaseStep.Clicks.clickElement(homePage.Agra);
 	}
 	
 	public static void clickOnTo() {

@@ -1,5 +1,10 @@
 package com.spiceJet.tests;
 
+import static org.testng.Assert.assertEquals;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -22,6 +27,17 @@ public class TC_05 {
 		
 		
 		HomeSteps.clickOnFrom();
+		
+		WebElement text = WebDriverSession.getWebDriverSession().findElement(By.xpath("//div[text()='Select a region and city below']"));
+		String textValue = text.getText();
+		System.out.println(textValue);
+		if (text.isDisplayed()) {
+			System.out.println("Text is displayed");
+		}else {
+			System.out.println("Text is not displayed");
+
+		}
+		
 		
 	}
 	

@@ -1,16 +1,15 @@
 package com.spiceJet.tests;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.spiceJet.main.WebDriverSession;
 import com.spiceJet.main.WebDriverSession.WebDriverSteps;
-import com.spiceJet.steps.HomeSteps;
+import com.spiceJet.steps.LoginSteps;
 
-public class TC_10 {
-
+public class LoginTC_02 {
+	
 	@BeforeTest
 	public void openApplication() {
 
@@ -19,16 +18,9 @@ public class TC_10 {
 	}
 
 	@Test
-	public void clickOnFamilyAndFriends(){
-				
-		HomeSteps.familyAndFiends();
-		Boolean radioSelected= WebDriverSession.getWebDriverSession().findElement(By.xpath("//div[text()='Family & Friends']")).isSelected();
-	     if (radioSelected)
-	    {
-	      System.out.println("Radio Button is selected");
-	    }else{
-	      System.out.println("Radio Button is not selected");
-	    }
+	public void LoginIntoApp() {
+		
+		LoginSteps.loginWithInvalidCredential();
 		
 	}
 	
@@ -38,5 +30,4 @@ public class TC_10 {
 		WebDriverSteps.closeBrowser();
 
 	}
-	
 }
