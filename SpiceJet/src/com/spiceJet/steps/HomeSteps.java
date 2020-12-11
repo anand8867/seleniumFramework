@@ -28,7 +28,7 @@ public class HomeSteps extends BaseStep {
 	public static void clickOnFrom() {
 		
 		BaseStep.Clicks.clickElement(homePage.FromDestination);
-		//BaseStep.Clicks.clickElement(homePage.Agra);
+		BaseStep.Clicks.clickElement(homePage.Agra);
 	}
 	
 	public static void clickOnTo() {

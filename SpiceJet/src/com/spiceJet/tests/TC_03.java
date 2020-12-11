@@ -1,6 +1,7 @@
 package com.spiceJet.tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -22,7 +23,8 @@ public class TC_03 {
 	@Test
 	public void OneWay() {
 		
-		HomeSteps.oneWay();
+		HomeSteps.oneWay();		
+		
 		WebElement radioSelected= WebDriverSession.getWebDriverSession().findElement(By.xpath("//div[@data-testid='one-way-radio-button']"));
 	     if (radioSelected.isSelected())
 	    {
@@ -30,6 +32,11 @@ public class TC_03 {
 	    }else{
 	    	radioSelected.click();
 	    	System.out.println("select");
+	    	
+	    	
+	    	
+	    	//   //circle[contains(@cx, '9') AND fill = '#EDB16A']
+	    	//   //circle[@fill='#EDB16A']
 }
 				
 	}
