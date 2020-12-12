@@ -42,6 +42,7 @@ public class HomeSteps extends BaseStep {
 	
 	public static void returnDate() {
 		
+		BaseStep.Clicks.clickElement(homePage.Roundtrip);
 		BaseStep.Clicks.clickElement(homePage.ReturnDate);
 	}
 	public static void passenger() {

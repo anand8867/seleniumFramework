@@ -1,7 +1,10 @@
 package com.spiceJet.tests;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -23,22 +26,24 @@ public class TC_04 {
 	public void OneWay() {
 		
 		HomeSteps.roundTrip();
-		WebElement radioSelected= WebDriverSession.getWebDriverSession().findElement(By.xpath("//div[@data-testid='round-trip-radio-button']"));
-	     if (radioSelected.isSelected()){
-	    	 
-	      System.out.println("Radio Button is selected");
-	    }else{
-	    	radioSelected.click();
-	      System.out.println("Radio Button is not selected");
-	    }
+		int actLength = WebDriverSession.getWebDriverSession().findElements(By.xpath("//div[@data-testid='round-trip-radio-button']")).size();
+		System.out.println(actLength + " :lnght");
+		int exp = 2;
 		
+		Assert.assertEquals(actLength, exp);
+//		WebElement radioSelected= WebDriverSession.getWebDriverSession().findElement(By.xpath("//div[@data-testid='round-trip-radio-button']"));
+//	     if (radioSelected.isSelected()){
+//	    	 
+//	      System.out.println("Radio Button is selected");
+//	    }else{
+//	    	radioSelected.click();
+//	    }
+//		
 	}
 	
 	@AfterTest
 	public void closeApplication() {
 
 		WebDriverSteps.closeBrowser();
-
 	}
-
 }

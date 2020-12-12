@@ -9,9 +9,10 @@ import org.testng.annotations.Test;
 
 import com.spiceJet.main.WebDriverSession;
 import com.spiceJet.main.WebDriverSession.WebDriverSteps;
+import com.spiceJet.steps.FlightStatusSteps;
 import com.spiceJet.steps.HomeSteps;
 
-public class TC_07 {
+public class FlightStatusTC_01 {
 
 	@BeforeTest
 	public void openApplication() {
@@ -21,14 +22,14 @@ public class TC_07 {
 	}
 
 	@Test
-	public void departureDate (){
-				
-		HomeSteps.departureDate();
-		WebElement actualText = WebDriverSession.getWebDriverSession().findElement(By.xpath("(//div[text()='December '])[1]"));
-		String actTextValue = actualText.getText();
-		String expText = "December 2020";
-		Assert.assertEquals(actTextValue, expText);
-		System.out.println(actTextValue);
+	public void flightTab(){
+		FlightStatusSteps.clickOnTab();
+		WebElement actualText = WebDriverSession.getWebDriverSession().findElement(By.xpath("//div[text()='Flight Status']"));
+		String ActualTextValue = actualText.getText();
+		
+		String expectedText = "Flight Status";
+		System.out.println(ActualTextValue);
+		Assert.assertEquals(ActualTextValue, expectedText);
 		
 	}
 	
@@ -38,4 +39,5 @@ public class TC_07 {
 		WebDriverSteps.closeBrowser();
 
 	}
+
 }
