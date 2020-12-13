@@ -39,6 +39,7 @@ public class WebDriverSession {
 			System.out.println("Start opening the application");
 			WebDriverSession.getWebDriverSession().get(Url);
 			System.out.println("URL opening: " + Url);
+			WebDriverSession.getWebDriverSession().manage().window().maximize();
 		}
 
 		public static String getCurrentUrl() {

@@ -11,7 +11,7 @@ public class LoginSteps extends BaseStep {
 
 	public static LoginPage loginPage = new LoginPage();
 
-	public static void loginWithValidCredential() {
+	public static void login() {
 
 		BaseStep.Clicks.clickElement(loginPage.login);
 		BaseStep.Clicks.clickElement(loginPage.mobRadioButton);
@@ -29,18 +29,18 @@ public class LoginSteps extends BaseStep {
 		//System.out.println(v+ " : boolean");
 
 		
-		WebElement ele = BaseStep.Finds.findElement(By.xpath("//div[@class='css-76zvg2 r-jwli3a']")); 
-		BaseStep.Waits.waitForElementToBeClickable(loginPage.profile);
-		for (int i = 0; i <= 10; i++) {
-			try {
-				if (ele.isDisplayed()) {
-					ele.click();
-					break;
-				}
-			} catch (StaleElementReferenceException e) {
-				System.out.println("Trying again....");
-			}
-		}
+//		WebElement ele = BaseStep.Finds.findElement(By.xpath("//div[@class='css-76zvg2 r-jwli3a']")); 
+//		BaseStep.Waits.waitForElementToBeClickable(loginPage.profile);
+//		for (int i = 0; i <= 10; i++) {
+//			try {
+//				if (ele.isDisplayed()) {
+//					ele.click();
+//					break;
+//				}
+//			} catch (StaleElementReferenceException e) {
+//				System.out.println("Trying again....");
+//			}
+//		}
 
 	}
 
