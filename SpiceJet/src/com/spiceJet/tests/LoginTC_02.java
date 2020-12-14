@@ -17,6 +17,7 @@ public class LoginTC_02 {
 		WebDriverSession.getWebDriverSession().manage().window().maximize();
 	}
 
+	
 	@Test
 	public void LoginIntoApp() {
 		

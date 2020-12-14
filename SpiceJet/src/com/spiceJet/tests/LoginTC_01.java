@@ -22,15 +22,13 @@ public class LoginTC_01 {
 	@BeforeTest
 	public void openApplication() {
 
-		WebDriverSteps.openApplication("https://beta.spicejet.com/");
-		WebDriverSession.getWebDriverSession().manage().window().maximize();
-		
+		WebDriverSteps.openApplication("https://beta.spicejet.com/");		
 	}
 
 	@Test 
-	public void LoginIntoApp() throws InterruptedException { 
+	public void TC_75() throws InterruptedException { 
 		
-		LoginSteps.loginWithValidCredential();
+		LoginSteps.login();
 		
 		WebElement ele = BaseStep.Finds.findElement(By.xpath("//div[@class='css-76zvg2 r-jwli3a']")); 
 		BaseStep.Waits.waitForElementToBeClickable(ele);

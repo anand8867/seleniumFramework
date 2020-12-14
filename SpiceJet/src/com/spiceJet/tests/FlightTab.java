@@ -3,25 +3,27 @@ package com.spiceJet.tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.spiceJet.main.WebDriverSession;
 import com.spiceJet.main.WebDriverSession.WebDriverSteps;
-import com.spiceJet.steps.HomeSteps;
+import com.spiceJet.steps.FlightTabSteps;
 
-public class TC_01 {
+public class FlightTab {
 
-	@BeforeTest
+	@BeforeMethod
 	public void openApplication() {
 
 		WebDriverSteps.openApplication("https://beta.spicejet.com/");
 		WebDriverSession.getWebDriverSession().manage().window().maximize();
 	}
 
-	@Test
-	public void navigateToUrl() {
+	@Test(priority = 1)
+	public void TC_01() {
 
 		String expectedUrl = "https://beta.spicejet.com/";
 
@@ -31,8 +33,12 @@ public class TC_01 {
 
 	}
 
-	public void FlightTab() {
-		HomeSteps.clickOnFlightTab();
+	/**
+	 * Description: ksdfks
+	 */
+	@Test(priority = 2)
+	public void TC_01A() {
+		FlightTabSteps.clickOnFlightTab();
 		String ActualTitle = WebDriverSession.getWebDriverSession().getTitle();
 		String ExpectedTitle = "SpiceJet - Flight Booking for Domestic and International, Cheap Air Tickets";
 		Assert.assertEquals(ActualTitle, ExpectedTitle);
@@ -41,46 +47,36 @@ public class TC_01 {
 
 	}
 
-	public void OneWay() {
+	@Test(priority = 3)
+	public void TC_02() {
 
-		HomeSteps.oneWay();
+		FlightTabSteps.oneWay();
 
-		WebElement radioSelected = WebDriverSession.getWebDriverSession()
-				.findElement(By.xpath("//div[@data-testid='one-way-radio-button']"));
-		if (radioSelected.isSelected()) {
-			System.out.println("Radio Button is selected");
-		} else {
-			radioSelected.click();
-			System.out.println("select");
+		// WebElement radioSelected = WebDriverSession.getWebDriverSession()
+		// .findElement(By.xpath("//div[@data-testid=\"one-way-radio-button\"]/div/*/*/*[2]"));
+		Boolean isPresent = WebDriverSession.getWebDriverSession()
+				.findElements(By.xpath("//div[@data-testid='one-way-radio-button']/div/*/*/*[2]")).size() > 0;
+		System.out.println(isPresent);
 
-		}
-
-		// //circle[contains(@cx, '9') AND fill = '#EDB16A']
-		// //circle[@fill='#EDB16A']
 	}
 
-	public void roundTrip() {
+	@Test(priority = 4)
+	public void TC_03() {
 
-		HomeSteps.roundTrip();
+		FlightTabSteps.roundTrip();
 		int actLength = WebDriverSession.getWebDriverSession()
 				.findElements(By.xpath("//div[@data-testid='round-trip-radio-button']")).size();
 		System.out.println(actLength + " :length");
 		int exp = 2;
 
 		Assert.assertEquals(actLength, exp);
-//	WebElement radioSelected= WebDriverSession.getWebDriverSession().findElement(By.xpath("//div[@data-testid='round-trip-radio-button']"));
-//     if (radioSelected.isSelected()){
-//    	 
-//      System.out.println("Radio Button is selected");
-//    }else{
-//    	radioSelected.click();
-//    }
-//	
+
 	}
 
-	public void fromDestination() {
+	@Test(priority = 5)
+	public void TC_04() {
 
-		HomeSteps.clickOnFrom();
+		FlightTabSteps.clickOnFrom();
 
 		WebElement text = WebDriverSession.getWebDriverSession()
 				.findElement(By.xpath("//div[text()='Select a region and city below']"));
@@ -95,10 +91,10 @@ public class TC_01 {
 
 	}
 
-	public void toDestination() {
+	@Test(priority = 6)
+	public void TC_05() {
 
-		HomeSteps.clickOnTo();
-
+		FlightTabSteps.clickOnTo();
 		WebElement text = WebDriverSession.getWebDriverSession()
 				.findElement(By.xpath("//div[text()='Select a region and city below']"));
 		String textValue = text.getText();
@@ -112,7 +108,33 @@ public class TC_01 {
 
 	}
 
-	@AfterTest
+	@Test(priority = 7)
+	public void TC_06() {
+
+		FlightTabSteps.departureDate();
+		WebElement actualText = WebDriverSession.getWebDriverSession()
+				.findElement(By.xpath("(//div[text()='December '])[1]"));
+		String actTextValue = actualText.getText();
+		String expText = "December 2020";
+		Assert.assertEquals(actTextValue, expText);
+		System.out.println(actTextValue);
+
+	}
+
+	@Test(priority = 8)
+	public void TC_07() {
+
+		FlightTabSteps.returnDate();
+		WebElement actualText = WebDriverSession.getWebDriverSession()
+				.findElement(By.xpath("(//div[text()='December '])[2]"));
+		String actTextValue = actualText.getText();
+		String expText = "December 2020";
+		Assert.assertEquals(actTextValue, expText);
+		System.out.println(actTextValue);
+
+	}
+
+	@AfterMethod
 	public void closeApplication() {
 
 		WebDriverSteps.closeBrowser();
