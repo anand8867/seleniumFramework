@@ -1,15 +1,16 @@
-package com.spicejet.steps;
+package com.spiceJet.steps;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import com.spicejet.main.BaseStep;
-import com.spicejet.page.FlightsTabPage;
+import com.spiceJet.main.BaseStep;
+import com.spiceJet.page.FlightsTabPage;
 
 public class FlightsTabSteps extends BaseStep {
+	
 
 	public static FlightsTabPage flightsTabPage = new FlightsTabPage();
-
+	
 	public static void clickOnFlightsTab() {
 
 		BaseStep.Clicks.clickElement(flightsTabPage.flightsTab);

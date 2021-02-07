@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 import com.spiceJet.main.WebDriverSession;
 import com.spiceJet.main.WebDriverSession.WebDriverSteps;
-import com.spiceJet.steps.FlightTabSteps;
 
 public class FlightTab {
 

@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import com.spiceJet.main.WebDriverSession;
 import com.spiceJet.main.WebDriverSession.WebDriverSteps;
-import com.spiceJet.steps.FlightStatusSteps;
 
 public class FlightStatusTC_02 {
 
@@ -17,12 +16,12 @@ public class FlightStatusTC_02 {
 		WebDriverSession.getWebDriverSession().manage().window().maximize();
 	}
 
-	@Test
-	public void departureDate(){
-		
-		FlightStatusSteps.clickOnDepartureDate();
-		
-	}
+//	@Test
+//	public void departureDate(){
+//		
+//		FlightStatusSteps.clickOnDepartureDate();
+//		
+//	}
 	
 	@AfterTest
 	public void closeApplication() {

@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import com.spiceJet.main.WebDriverSession;
 import com.spiceJet.main.WebDriverSession.WebDriverSteps;
-import com.spiceJet.steps.FlightStatusSteps;
 
 public class FlightStatusTC_05 {
 
@@ -17,11 +16,11 @@ public class FlightStatusTC_05 {
 		WebDriverSession.getWebDriverSession().manage().window().maximize();
 	}
 
-	@Test
-	public void fillingFlightNo(){
-		
-		FlightStatusSteps.fillFlightNumber();
-	}
+//	@Test
+//	public void fillingFlightNo(){
+//		
+//		FlightStatusSteps.fillFlightNumber();
+//	}
 	
 	@AfterTest
 	public void closeApplication() {

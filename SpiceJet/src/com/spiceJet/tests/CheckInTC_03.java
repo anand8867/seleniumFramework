@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import com.spiceJet.main.WebDriverSession;
 import com.spiceJet.main.WebDriverSession.WebDriverSteps;
-import com.spiceJet.steps.CheckInSteps;
 
 public class CheckInTC_03 {
 	
@@ -17,12 +16,12 @@ public class CheckInTC_03 {
 		WebDriverSession.getWebDriverSession().manage().window().maximize();
 	}
 	
-	@Test
-	public void pnrNumber() {
-		
-		CheckInSteps.emailFilling();
-		
-	}
+//	@Test
+//	public void pnrNumber() {
+//		
+//		CheckInSteps.emailFilling();
+//		
+//	}
 	@AfterTest
 	public void closeApplication() {
 		
